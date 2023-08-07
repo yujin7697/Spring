@@ -15,5 +15,8 @@
 		<property name="password" value="1234"></property>
 	</bean> -->
 	<context:component-scan base-package="com.test.app.config"/>
+	<context:component-scan base-package="com.test.app.domain.service"/>
+	
+	
 	
 </beans>

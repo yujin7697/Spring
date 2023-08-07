@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
-public class RootConfig {
+public class DataSourceConfig {
 //	Spring-jdbc Database
 //	@Bean
 //	public DataSource dataSource() {
