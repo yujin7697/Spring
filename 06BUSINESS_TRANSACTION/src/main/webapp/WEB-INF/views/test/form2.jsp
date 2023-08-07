@@ -7,16 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>form PAGE</h1>
-	<form action="${pageContext.request.contextPath}/memo/post" method="post">
-		<div>${id} </div>
-		<input type="number" name="id" placeholder="id" /><br /> 
-		<div>${text} </div>
+	<h1>form2 PAGE</h1>
+	<form action="${pageContext.request.contextPath}/test/post02" method="post">
+		<input name="id" placeholder="id" /><br /> 
 		<input name="text" placeholder="text" /><br /> 
-		<div>${writer} </div>
 		<input name="writer" placeholder="writer" /><br />
-		<div>${regdate} </div>
-		<input name="regdate" placeholder="yyyy-MM-dd hh:mm:ss"></inpu>
 		<input type="submit" />
 	</form>
 </body>
