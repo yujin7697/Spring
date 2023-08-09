@@ -30,7 +30,7 @@ public class MemoService {
 		mapper.insert(dto);
 	}
 //	메모작성
-	@Transactional(rollbackFor = Exception.class)
+	@Transactional(rollbackFor = Exception.class) //모든 예외에 대해서 롤백하겠다.
 	public void addMemoTx(MemoDto dto) {
 		log.info("MemoService's addMemoTx call!");
 		int id = dto.getId();
