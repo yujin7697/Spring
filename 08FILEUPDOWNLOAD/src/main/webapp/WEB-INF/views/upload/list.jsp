@@ -15,11 +15,25 @@
 		<hr >
 		FOLDER : ${subdir.getPath()}		
 		<c:forEach items='${subdir.listFiles()}' var='file'>
-				<a href="javascript:void(0)">${file.getName()}</a>
+				<a class="item" href="javascript:void(0)" data-dir="${subdir.getPath()}" data-file="${file.getName()}">
+					${file}
+				</a><br/>
 		</c:forEach>
 		<hr >
 	</c:forEach>
 </div>
+
+<script>
+	const projectPath = '${pageContext.request.contextPath}';
+	const item_els = document.querySelectorAll('.item');
+	item_els.forEach((item)=>{
+		item.addEventListener('click',function(){
+			const filepath = encodeURIComponent(item.getAttribute('data-dir')+"\\"+item.getAttribute('data-file'));
+			alert(filepath);
+			location.href=projectPath+"/download?path="+filepath;
+		})
+	})
+</script>
 
 
 </body>
