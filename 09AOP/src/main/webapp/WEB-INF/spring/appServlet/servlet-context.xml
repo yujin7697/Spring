@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+<!-- 	<resources mapping="/resources/**" location="/resources/" />
+ -->
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<!--<context:component-scan base-package="com.test.app" />-->
+	<context:component-scan base-package="com.test.app.controller" />
+	<context:component-scan base-package="com.test.app.restcontroller" />
+	
+</beans:beans>
+
+
+<!-- 
+servlet-context.xml:
+
+각각의 서블릿(DispatcherServlet)에 대한 설정 파일입니다.
+각 서블릿의 동작과 관련된 설정과 빈들을 정의합니다.
+해당 서블릿과 관련된 웹 컨트롤러, 뷰 리졸버 등을 설정합니다.
+서블릿에 특화된 요청 처리와 렌더링 설정을 포함합니다.
+서블릿마다 별도의 servlet-context.xml 파일을 가질 수 있으며, 각 서블릿의 스코프 내에서만 유효한 빈들이 정의됩니다. 
+
+-->
